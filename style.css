@@ -1,0 +1,339 @@
+:root {
+    --primary-color: #4a90e2;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --weak-color: #ff4d4d;
+    --medium-color: #ffa500;
+    --strong-color: #2ecc71;
+    --border-radius: 12px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.nav-link.active {
+    color: white;
+    background: var(--primary-color);
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+}
+
+#togglePassword {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.strength-meter {
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.stat-item .label {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.stat-item .value {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.recommendations {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.recommendations h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+}
+
+.recommendations ul {
+    list-style: none;
+}
+
+.recommendations li {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.4;
+}
+
+.recommendations li::before {
+    content: "\f05a"; /* FontAwesome info-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.recommendations li.check::before {
+    content: "\f058"; /* FontAwesome check-circle */
+    color: var(--strong-color);
+}
+
+.recommendations li.warning::before {
+    content: "\f06a"; /* FontAwesome exclamation-circle */
+    color: var(--weak-color);
+}
+
+/* Generator Styles */
+.result-container {
+    background: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border: 2px dashed var(--primary-color);
+}
+
+.generated-password {
+    flex-grow: 1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    word-break: break-all;
+}
+
+.result-container button {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.result-container button:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Entropy & Technical Dashboard */
+.tech-details {
+    margin-top: 15px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.8rem;
+}
+
+.tech-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.tech-label { color: #bdc3c7; }
+.tech-value { color: #2ecc71; font-weight: bold; }
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Strength Colors */
+.weak { background-color: var(--weak-color); }
+.medium { background-color: var(--medium-color); }
+.strong { background-color: var(--strong-color); }
+
+.text-weak { color: var(--weak-color); }
+.text-medium { color: var(--medium-color); }
+.text-strong { color: var(--strong-color); }
+
+.text-warning { color: var(--medium-color); }
+
+/* Tips Page Styles */
+.tips-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tip-card {
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+    background: #f9f9f9;
+    border-radius: 0 8px 8px 0;
+}
+
+.tip-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.tip-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}

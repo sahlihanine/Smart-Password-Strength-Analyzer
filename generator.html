@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mots de Passe - Smart Password Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cog"></i> Générateur Sécurisé</h1>
+            <p>Créez des mots de passe impossibles à deviner.</p>
+        </header>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Analyseur</a>
+            <a href="generator.html" class="nav-link active">Générateur</a>
+            <a href="tips.html" class="nav-link">Conseils</a>
+        </nav>
+
+        <main class="card">
+            <div class="result-container">
+                <div class="generated-password" id="generatedPassword">........</div>
+                <button id="copyBtn" title="Copier"><i class="fas fa-copy"></i></button>
+                <button id="refreshBtn" title="Générer un nouveau"><i class="fas fa-sync-alt"></i></button>
+            </div>
+
+            <div class="settings">
+                <div class="setting-item">
+                    <label>Longueur : <span id="lengthVal">16</span></label>
+                    <input type="range" id="lengthRange" min="8" max="50" value="16">
+                </div>
+
+                <div class="options-grid">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="includeUpper" checked> Majuscules (ABC)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="includeLower" checked> Minuscules (abc)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="includeNumbers" checked> Chiffres (123)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="includeSymbols" checked> Symboles (!@#)
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Smart Password Strength Analyzer - Projet Étudiant</p>
+        </footer>
+    </div>
+    <script src="generator.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Password Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> Smart Password Analyzer</h1>
+            <p>Analysez la sécurité de votre mot de passe en temps réel.</p>
+        </header>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link active">Analyseur</a>
+            <a href="generator.html" class="nav-link">Générateur</a>
+            <a href="tips.html" class="nav-link">Conseils</a>
+        </nav>
+
+        <main class="card">
+            <div class="input-group">
+                <label for="password">Mot de passe</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Entrez votre mot de passe..." autocomplete="off">
+                    <button type="button" id="togglePassword" title="Afficher/Masquer">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <div class="strength-meter">
+                    <div id="strength-bar" class="bar"></div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="label">Niveau :</span>
+                        <span id="strength-text" class="value">En attente...</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Temps de crack :</span>
+                        <span id="crack-time" class="value text-warning">Inconnu</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Score :</span>
+                        <span id="score-text" class="value">0/100</span>
+                    </div>
+                </div>
+
+                <div class="recommendations">
+                    <h3><i class="fas fa-lightbulb"></i> Recommandations</h3>
+                    <ul id="recommendations-list">
+                        <li>Entrez un mot de passe pour voir les conseils.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-details">
+                    <div class="tech-line">
+                        <span class="tech-label">Entropie :</span>
+                        <span id="entropy-val" class="tech-value">0 bits</span>
+                    </div>
+                    <div class="tech-line">
+                        <span class="tech-label">Charset :</span>
+                        <span id="charset-val" class="tech-value">0</span>
+                    </div>
+                    <div class="tech-line">
+                        <span class="tech-label">Sécurité :</span>
+                        <span id="security-status" class="tech-value">N/A</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Smart Password Strength Analyzer - Projet Étudiant</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
